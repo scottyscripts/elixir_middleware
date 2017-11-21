@@ -1,18 +1,15 @@
 defmodule GithubWebhookMiddleware do
-  @moduledoc """
-  Documentation for GithubWebhookMiddleware.
-  """
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> GithubWebhookMiddleware.hello
-      :world
-
-  """
   def hello do
     :world
+  end
+
+  def start(_type, _args) do
+    children = []
+
+    opts = [strategy: :one_for_one]
+
+    Supervisor.start_link(children, opts)
   end
 end
