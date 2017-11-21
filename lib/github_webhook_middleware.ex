@@ -10,6 +10,7 @@ defmodule GithubWebhookMiddleware do
     # new syntax as of Elixir 1.5 (no longer use Supervisor.spec)
     children = [
       # use a tuple instead of an atom: to configure children
+      GithubWebhookMiddleware.Endpoint
     ]
 
     # name: name of Supervisor
